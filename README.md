@@ -1,3 +1,9 @@
+Introduction
+=============
+
+A simple client to access REST Service.
+
+
 Requirements
  =============
 1. Python3.7
