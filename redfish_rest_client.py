@@ -45,9 +45,12 @@ class RedfishClient:
             method, target_url, headers=request_headers, verify=False, data=request_body, timeout=self.__timeout)
 
         response = dict()
-        response["body"] = json.loads(raw_response.text)
         response["status_code"] = raw_response.status_code
         response["headers"] = raw_response.headers
+        if len(raw_response.text) > 0:
+            response["body"] = json.loads(raw_response.text)
+        else:
+            response["body"] = ""
 
         return response
 
